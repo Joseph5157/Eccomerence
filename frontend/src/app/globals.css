@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  medistore design system                                            */
+/*  Colors, fonts and the "blister pack" motif live here.              */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Brand palette */
+  --color-primary: #1b4332;      /* deep green   */
+  --color-primary-600: #245741;  /* hover green  */
+  --color-accent: #e8a33d;       /* amber        */
+  --color-accent-soft: #f6dcac;  /* amber tint   */
+  --color-sage: #dce8de;         /* soft sage bg */
+  --color-offwhite: #f7f9f4;     /* off-white bg */
+  --color-ink: #16211c;          /* ink text     */
+  --color-ink-soft: #4a5a51;     /* muted ink    */
+
+  /* Fonts (wired to next/font CSS variables set in layout.tsx) */
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Rounding for the pill / capsule motif */
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--color-offwhite);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Blister-pack motif                                                 */
+/*  A row of perforated dots punched along the top edge of a card.     */
+/* ------------------------------------------------------------------ */
+@utility blister-perf {
+  background-image: radial-gradient(
+    circle at center,
+    var(--color-offwhite) 0,
+    var(--color-offwhite) 3px,
+    transparent 3.5px
+  );
+  background-size: 16px 16px;
+  background-position: 8px center;
+  background-repeat: repeat-x;
+}

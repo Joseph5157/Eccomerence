@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: medistore-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: medusa
+      POSTGRES_PASSWORD: medusa
+      POSTGRES_DB: medistore
+    ports:
+      # Mapped to 5442 on the host to avoid clashing with a local Postgres
+      # install that may already be listening on the default 5432.
+      - "5442:5432"
+    volumes:
+      - medistore-postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: medistore-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+volumes:
+  medistore-postgres-data:
