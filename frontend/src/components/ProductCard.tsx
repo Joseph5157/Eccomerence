@@ -19,6 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
       >
         <ProductThumb
           category={product.category}
+          handle={product.handle}
           label={product.title}
           className="aspect-square w-full"
         />

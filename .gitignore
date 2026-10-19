@@ -1,5 +1,6 @@
 # Local tooling config, not shared project source
 .claude/
+.tmp-docx/
 
 # OS junk
 .DS_Store

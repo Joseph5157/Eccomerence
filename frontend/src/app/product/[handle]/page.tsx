@@ -35,6 +35,7 @@ export default async function ProductDetailPage({
           <div className="blister-perf h-3 w-full bg-sage" />
           <ProductThumb
             category={product.category}
+            handle={product.handle}
             label={product.title}
             className="aspect-square w-full"
           />
@@ -93,6 +94,7 @@ export default async function ProductDetailPage({
               >
                 <ProductThumb
                   category={p.category}
+                  handle={p.handle}
                   label={p.title}
                   className="aspect-square w-full"
                 />

@@ -25,7 +25,7 @@ export function ShopGrid({
   return (
     <div>
       {/* Category filter tabs — capsule pills */}
-      <div className="mb-8 flex flex-wrap gap-2">
+      <div className="-mx-4 mb-8 flex flex-nowrap gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
         {TABS.map((tab) => {
           const isActive = tab === active;
           return (
@@ -33,7 +33,7 @@ export function ShopGrid({
               key={tab}
               type="button"
               onClick={() => setActive(tab)}
-              className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+              className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors sm:px-4 sm:py-2 sm:text-sm ${
                 isActive
                   ? "border-primary bg-primary text-offwhite"
                   : "border-primary/15 bg-white text-ink-soft hover:bg-sage hover:text-primary"

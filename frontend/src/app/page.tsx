@@ -72,17 +72,17 @@ export default async function HomePage() {
 
       {/* Category shortcuts */}
       <section className="mx-auto max-w-6xl px-4 py-10">
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           {CATEGORIES.map((cat) => (
             <Link
               key={cat}
               href={`/shop?category=${cat}`}
-              className="group flex items-center justify-between rounded-2xl border border-primary/10 bg-white p-5 transition-shadow hover:shadow-md"
+              className="group flex min-w-0 items-center justify-center rounded-xl border border-primary/10 bg-white px-2 py-3 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:justify-between sm:rounded-2xl sm:p-5 sm:text-left"
             >
-              <span className="font-heading text-lg font-semibold text-ink">
+              <span className="truncate font-heading text-xs font-semibold text-ink sm:text-lg">
                 {cat}
               </span>
-              <span className="text-primary transition-transform group-hover:translate-x-1">
+              <span className="hidden text-primary transition-transform group-hover:translate-x-1 sm:inline">
                 →
               </span>
             </Link>

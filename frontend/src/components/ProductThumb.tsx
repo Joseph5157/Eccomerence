@@ -1,4 +1,17 @@
+import Image from "next/image";
 import type { Category } from "@/lib/types";
+
+const PRODUCT_IMAGES: Record<string, string> = {
+  "vitamin-d3-60k": "/products/vitamin-d3-60k.png",
+  "vitamin-c-chewable": "/products/vitamin-c-chewable.png",
+  "multivitamin-daily": "/products/multivitamin-daily.png",
+  "cough-relief-syrup": "/products/cough-relief-syrup.png",
+  "digestive-syrup": "/products/digestive-syrup.png",
+  "iron-folic-syrup": "/products/iron-folic-syrup.png",
+  "omega-3-fish-oil": "/products/omega-3-fish-oil.png",
+  "calcium-magnesium": "/products/calcium-magnesium.png",
+  "protein-immunity-powder": "/products/protein-immunity-powder.png",
+};
 
 const THEME: Record<
   Category,
@@ -15,14 +28,17 @@ const THEME: Record<
  */
 export function ProductThumb({
   category,
+  handle,
   label,
   className = "",
 }: {
   category: Category;
+  handle?: string;
   label: string;
   className?: string;
 }) {
   const t = THEME[category];
+  const image = handle ? PRODUCT_IMAGES[handle] : undefined;
   const initials = label
     .split(" ")
     .slice(0, 2)
@@ -34,12 +50,22 @@ export function ProductThumb({
     <div
       className={`relative flex items-center justify-center overflow-hidden ${className}`}
       style={{ background: `linear-gradient(135deg, ${t.from}, ${t.to})` }}
-      aria-hidden="true"
     >
+      {image ? (
+        <Image
+          src={image}
+          alt={`${label} product packaging`}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03] sm:p-5"
+        />
+      ) : (
+        <>
       <svg
         viewBox="0 0 200 200"
         className="h-3/4 w-3/4 drop-shadow-sm"
         role="img"
+        aria-label={`${label} placeholder`}
       >
         {/* blister tray */}
         <rect
@@ -86,6 +112,8 @@ export function ProductThumb({
       >
         {initials}
       </span>
+        </>
+      )}
     </div>
   );
 }
