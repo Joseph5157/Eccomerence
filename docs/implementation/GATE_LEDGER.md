@@ -4,7 +4,7 @@
 
 | Gate | Status | Work branch / PR | Evidence | Acceptance |
 | --- | --- | --- | --- | --- |
-| P0 — Documentation | IN REVIEW / pending | `docs/p0-gated-delivery-protocol`; draft PR to be attached | Roadmap, protocol, state, test matrix, G0 checklist and ADR | Owner approval pending |
+| P0 — Documentation | IN REVIEW / pending | [`docs/p0-gated-delivery-protocol` — PR #1](https://github.com/Joseph5157/Eccomerence/pull/1) | Roadmap, protocol, state, test matrix, G0 checklist and ADR | Owner approval pending |
 | G0 — Baseline / CI | NOT STARTED | — | — | — |
 | G1 — Rules and eligibility | NOT STARTED | — | — | — |
 | G2 — Catalog and inventory | NOT STARTED | — | — | — |
