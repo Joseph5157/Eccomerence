@@ -4,6 +4,7 @@
 **Repository:** `Joseph5157/Eccomerence`  
 **Accepted audit baseline (main):** `3b88e45f11e2c45495c78a96ab0d29e8b54d04fd`  
 **Documentation work branch:** `docs/p0-gated-delivery-protocol`  
+**Draft review PR:** [#1 — Gate-based delivery docs](https://github.com/Joseph5157/Eccomerence/pull/1)  
 **Current phase:** **P0 DOCUMENTATION — IN REVIEW / awaiting explicit owner acceptance**  
 **Active implementation gate:** **NONE**  
 **Last accepted implementation gate:** **NONE**  
